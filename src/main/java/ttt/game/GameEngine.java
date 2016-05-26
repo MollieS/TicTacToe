@@ -1,5 +1,7 @@
 package ttt.game;
 
+import ttt.Player;
+
 public class GameEngine {
 
     private Board board;
@@ -17,7 +19,7 @@ public class GameEngine {
     }
 
     public void play(int location) {
-        board.placeMark(currentPlayer.getMark(), location);
+        board = board.placeMark(currentPlayer.getMark(), location);
         switchTurn();
     }
 
@@ -48,8 +50,7 @@ public class GameEngine {
     }
 
     public Marks winningMark() {
-        if (!board.isWon()) return null;
-        if (board.isAWinFor(currentPlayer.getMark())) return currentPlayer.getMark();
+        if (!board.isWon()) { return null; }
         return nextPlayer.getMark();
     }
 

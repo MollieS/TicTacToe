@@ -5,7 +5,6 @@ import org.junit.Test;
 import ttt.game.Board;
 import ttt.game.GameEngine;
 import ttt.game.Marks;
-import ttt.game.Player;
 import ttt.players.HumanPlayer;
 
 import java.util.Arrays;
@@ -23,15 +22,16 @@ public class GameEngineTest {
 
     @Before
     public void setUp() throws Exception {
-        this.player1 = new HumanPlayer(Marks.X);
-        this.player2 = new HumanPlayer(Marks.O);
-        this.board = new Board(3);
+        this.player1 = new HumanPlayer(Marks.X, new InputFake());
+        this.player2 = new HumanPlayer(Marks.O, new InputFake());
+        this.board = new Board(3, new Marks[0]);
         this.gameEngine = new GameEngine(player1, player2, board);
     }
 
     @Test
     public void updatesAvailableLocations() {
         gameEngine.play(0);
+        board = gameEngine.showBoard();
         assertEquals(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8), board.availableMoves());
     }
 
