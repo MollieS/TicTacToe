@@ -1,5 +1,6 @@
 package ttt.consoleui;
 
+import ttt.GameException;
 import ttt.Input;
 
 import java.util.List;
@@ -27,22 +28,36 @@ public class ConsoleInput implements Input {
         return null;
     }
 
-    public Integer getUserLocation(List<Integer> board) {
+    public Integer getUserLocation(List<Integer> board, int boardSize) throws GameException {
         String input = getInput();
         if (!isAnInteger(input)) {
-            return null;
+            throw GameException.notANumber();
         }
-        int location = (Integer.parseInt(input) - 1);
+        int location = (convertToInt(input) - 1);
         if (board.contains(location)) { return location; }
-        return null;
+        if (location > boardSize) {
+            throw GameException.outOfBounds();
+        } else {
+            throw GameException.takenCell();
+        }
     }
 
     private int validateChoice() {
         String input = getInput();
         int choice;
         if (isAnInteger(input)) {
-            choice = Integer.parseInt(input);
+            choice = convertToInt(input);
         } else {
+            choice = 0;
+        }
+        return choice;
+    }
+
+    private int convertToInt(String input) {
+        int choice;
+        try {
+            choice = Integer.parseInt(input);
+        } catch (Exception ex) {
             choice = 0;
         }
         return choice;
