@@ -5,8 +5,8 @@ import org.junit.Test;
 import ttt.consoleui.ConsoleBoard;
 import ttt.game.Board;
 import ttt.game.GameEngine;
-import ttt.game.Marks;
 import ttt.game.GameLoop;
+import ttt.game.Marks;
 import ttt.players.HumanPlayer;
 
 import static junit.framework.TestCase.assertTrue;

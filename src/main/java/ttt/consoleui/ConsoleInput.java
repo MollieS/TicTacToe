@@ -23,7 +23,7 @@ public class ConsoleInput implements Input {
     }
 
     public Integer getMenuChoice(List<Integer> options) {
-        int choice =  validateChoice();
+        Integer choice =  validateChoice();
         if (options.contains(choice)) { return choice; }
         return null;
     }
@@ -42,15 +42,13 @@ public class ConsoleInput implements Input {
         }
     }
 
-    private int validateChoice() {
+    private Integer validateChoice() {
         String input = getInput();
-        int choice;
         if (isAnInteger(input)) {
-            choice = convertToInt(input);
+            return convertToInt(input);
         } else {
-            choice = 0;
+            return null;
         }
-        return choice;
     }
 
     private int convertToInt(String input) {

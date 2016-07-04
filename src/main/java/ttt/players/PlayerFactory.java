@@ -1,8 +1,8 @@
 package ttt.players;
 
+import ttt.Player;
 import ttt.consoleui.ConsoleInput;
 import ttt.game.Marks;
-import ttt.Player;
 
 import java.util.Arrays;
 import java.util.List;
