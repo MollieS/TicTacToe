@@ -2,8 +2,10 @@ package ttt;
 
 import org.junit.Test;
 import ttt.game.Marks;
+import ttt.players.HumanPlayer;
+import ttt.players.PerfectPlayer;
 import ttt.players.PlayerFactory;
-import ttt.players.*;
+import ttt.players.RandomPlayer;
 
 import static junit.framework.TestCase.assertTrue;
 

@@ -1,8 +1,8 @@
 package ttt.game;
 
-import ttt.consoleui.ConsoleBoard;
 import ttt.Display;
 import ttt.Input;
+import ttt.consoleui.ConsoleBoard;
 
 public class GameLoop {
     private GameEngine gameEngine;

@@ -91,5 +91,4 @@ public class DisplayTest {
     private boolean displayContains(String output) {
         return display.read().contains(output);
     }
-
 }

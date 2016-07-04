@@ -1,8 +1,8 @@
 package ttt;
 
 import org.junit.Test;
-import ttt.game.GameEngine;
 import ttt.game.GameConstructor;
+import ttt.game.GameEngine;
 
 import java.util.Arrays;
 import java.util.List;
