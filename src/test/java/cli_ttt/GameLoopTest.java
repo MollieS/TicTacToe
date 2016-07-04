@@ -1,11 +1,12 @@
-package ttt;
+package cli_ttt;
 
 import org.junit.Before;
 import org.junit.Test;
-import ttt.consoleui.ConsoleBoard;
+import ttt.Player;
+import cli_ttt.consoleui.ConsoleBoard;
 import ttt.game.Board;
 import ttt.game.GameEngine;
-import ttt.game.GameLoop;
+import cli_ttt.game.GameLoop;
 import ttt.game.Marks;
 import ttt.players.HumanPlayer;
 

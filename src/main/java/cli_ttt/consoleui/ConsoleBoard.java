@@ -1,4 +1,4 @@
-package ttt.consoleui;
+package cli_ttt.consoleui;
 
 import ttt.game.Board;
 import ttt.game.Marks;

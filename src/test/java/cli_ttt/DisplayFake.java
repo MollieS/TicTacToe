@@ -1,5 +1,6 @@
-package ttt;
+package cli_ttt;
 
+import ttt.Display;
 import ttt.game.Marks;
 
 public class DisplayFake implements Display {
