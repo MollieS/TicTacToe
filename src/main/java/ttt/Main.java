@@ -1,3 +1,5 @@
+package ttt;
+
 import ttt.consoleui.ConsoleBoard;
 import ttt.consoleui.ConsoleDisplay;
 import ttt.consoleui.ConsoleInput;
