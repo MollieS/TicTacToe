@@ -19,11 +19,15 @@ task(run, dependsOn: 'classes', type: JavaExec) {
 repositories {
     jcenter()
     mavenCentral()
+    flatDir {
+        dirs 'lib'
+    }
 }
 
 dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'pl.pragmatists:JUnitParams:1.0.4'
+    compile name: 'TicTacToe'
 }
 
 jacocoTestReport {
