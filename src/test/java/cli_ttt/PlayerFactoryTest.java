@@ -1,6 +1,6 @@
 package cli_ttt;
 
-import cli_ttt.players.PlayerFactory;
+import ttt.players.PlayerFactory;
 import org.junit.Test;
 import ttt.Player;
 import ttt.game.Marks;

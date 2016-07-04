@@ -1,9 +1,7 @@
-package cli_ttt.game;
+package ttt.game;
 
 import ttt.Player;
-import ttt.game.Board;
-import ttt.game.GameEngine;
-import cli_ttt.players.PlayerFactory;
+import ttt.players.PlayerFactory;
 
 import java.util.List;
 

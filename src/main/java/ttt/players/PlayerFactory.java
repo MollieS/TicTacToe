@@ -1,10 +1,9 @@
-package cli_ttt.players;
+package ttt.players;
 
 import ttt.Input;
 import ttt.Player;
-import cli_ttt.consoleui.ConsoleInput;
+import ttt.consoleui.ConsoleInput;
 import ttt.game.Marks;
-import ttt.players.*;
 
 import java.util.Arrays;
 import java.util.List;

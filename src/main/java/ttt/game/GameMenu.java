@@ -1,8 +1,7 @@
-package cli_ttt.game;
+package ttt.game;
 
 import ttt.Display;
 import ttt.Input;
-import ttt.game.GameEngine;
 
 import java.util.ArrayList;
 import java.util.Arrays;

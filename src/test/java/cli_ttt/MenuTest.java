@@ -1,6 +1,6 @@
 package cli_ttt;
 
-import cli_ttt.game.GameMenu;
+import ttt.game.GameMenu;
 import org.junit.Before;
 import org.junit.Test;
 import ttt.game.GameEngine;
