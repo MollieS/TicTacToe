@@ -2,7 +2,6 @@ package ttt.game;
 
 import ttt.Display;
 import ttt.Input;
-import ttt.game.GameConstructor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,14 +51,18 @@ public class GameMenu {
     private int loopForValidInput(Integer userInput, List<Integer> options) {
         while (userInput == null) {
             display.clearScreen();
-            if (playerChoices.isEmpty()) {
-                display.gameOptions();
-            } else {
-                display.boardOptions();
-            }
+            showCorrectMenu();
             display.invalidInput();
             userInput = input.getMenuChoice(options);
         }
         return userInput;
+    }
+
+    private void showCorrectMenu() {
+        if (playerChoices.isEmpty()) {
+            display.gameOptions();
+        } else {
+            display.boardOptions();
+        }
     }
 }
