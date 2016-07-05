@@ -2,6 +2,7 @@ package ttt.game;
 
 import ttt.Display;
 import ttt.Input;
+import ttt.game.GameConstructor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +27,7 @@ public class GameMenu {
         playerChoices.add(getGameChoice());
         openBoardMenu();
         playerChoices.add(getBoardChoice());
-        GameEngine gameEngine = GameConstructor.create(playerChoices);
+        GameEngine gameEngine = GameConstructor.create(playerChoices, input);
         display.displayMarks(gameEngine.currentMark(), gameEngine.nextMark());
         return gameEngine;
     }
