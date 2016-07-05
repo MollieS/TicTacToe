@@ -1,7 +1,7 @@
-package ttt;
+package cli_ttt;
 
-import org.junit.Test;
 import ttt.game.GameConstructor;
+import org.junit.Test;
 import ttt.game.GameEngine;
 
 import java.util.Arrays;

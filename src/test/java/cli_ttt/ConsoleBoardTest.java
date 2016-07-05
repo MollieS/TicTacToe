@@ -1,4 +1,4 @@
-package ttt;
+package cli_ttt;
 
 import org.junit.Before;
 import org.junit.Test;

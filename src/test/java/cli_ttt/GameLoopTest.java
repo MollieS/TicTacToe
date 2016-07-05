@@ -1,7 +1,8 @@
-package ttt;
+package cli_ttt;
 
 import org.junit.Before;
 import org.junit.Test;
+import ttt.Player;
 import ttt.consoleui.ConsoleBoard;
 import ttt.game.Board;
 import ttt.game.GameEngine;

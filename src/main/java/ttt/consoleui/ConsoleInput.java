@@ -35,7 +35,11 @@ public class ConsoleInput implements Input {
         }
         int location = (convertToInt(input) - 1);
         if (board.contains(location)) { return location; }
-        if (location > boardSize) {
+        return getError(boardSize, location);
+    }
+
+    private Integer getError(int boardSize, int location) throws GameException {
+        if (location > boardSize - 1) {
             throw GameException.outOfBounds();
         } else {
             throw GameException.takenCell();
@@ -60,6 +64,5 @@ public class ConsoleInput implements Input {
         }
         return choice;
     }
-
 
 }

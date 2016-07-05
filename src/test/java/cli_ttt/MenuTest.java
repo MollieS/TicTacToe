@@ -1,9 +1,9 @@
-package ttt;
+package cli_ttt;
 
+import ttt.game.GameMenu;
 import org.junit.Before;
 import org.junit.Test;
 import ttt.game.GameEngine;
-import ttt.game.GameMenu;
 
 import static junit.framework.TestCase.assertTrue;
 
