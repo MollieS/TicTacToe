@@ -26,7 +26,7 @@ public class GameMenu {
         playerChoices.add(getGameChoice());
         openBoardMenu();
         playerChoices.add(getBoardChoice());
-        GameEngine gameEngine = GameConstructor.create(playerChoices);
+        GameEngine gameEngine = GameConstructor.create(playerChoices, input);
         display.displayMarks(gameEngine.currentMark(), gameEngine.nextMark());
         return gameEngine;
     }
@@ -51,14 +51,18 @@ public class GameMenu {
     private int loopForValidInput(Integer userInput, List<Integer> options) {
         while (userInput == null) {
             display.clearScreen();
-            if (playerChoices.isEmpty()) {
-                display.gameOptions();
-            } else {
-                display.boardOptions();
-            }
+            showCorrectMenu();
             display.invalidInput();
             userInput = input.getMenuChoice(options);
         }
         return userInput;
+    }
+
+    private void showCorrectMenu() {
+        if (playerChoices.isEmpty()) {
+            display.gameOptions();
+        } else {
+            display.boardOptions();
+        }
     }
 }

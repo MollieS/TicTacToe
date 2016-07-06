@@ -1,4 +1,7 @@
-package ttt;
+package cli_ttt;
+
+import ttt.GameException;
+import ttt.Input;
 
 import java.util.ArrayList;
 import java.util.List;
