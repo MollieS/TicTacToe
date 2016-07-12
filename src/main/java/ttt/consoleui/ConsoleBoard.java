@@ -1,11 +1,12 @@
 package ttt.consoleui;
 
+import ttt.BoardDisplay;
 import ttt.game.Board;
 import ttt.game.Marks;
 
 import java.util.List;
 
-public class ConsoleBoard {
+public class ConsoleBoard implements BoardDisplay {
 
     public String createBoard(Board gameBoard) {
         return newBoard(gameBoard);
