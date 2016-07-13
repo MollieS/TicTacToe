@@ -34,7 +34,6 @@ public class ConsoleInput implements Input {
         return null;
     }
 
-    @Override
     public Integer getBoardChoice(BoardOption[] boardOptions) {
         String input = getInput();
         for (BoardOption option : boardOptions) {
@@ -62,7 +61,6 @@ public class ConsoleInput implements Input {
             throw GameException.takenCell();
         }
     }
-
 
     private int convertToInt(String input) {
         int choice;
