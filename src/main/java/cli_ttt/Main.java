@@ -1,8 +1,8 @@
-package ttt;
+package cli_ttt;
 
-import ttt.consoleui.ConsoleBoard;
-import ttt.consoleui.ConsoleDisplay;
-import ttt.consoleui.ConsoleInput;
+import cli_ttt.consoleui.ConsoleBoard;
+import cli_ttt.consoleui.ConsoleDisplay;
+import cli_ttt.consoleui.ConsoleInput;
 import ttt.game.GameMenu;
 
 public class Main {

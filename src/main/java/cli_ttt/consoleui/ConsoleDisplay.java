@@ -1,21 +1,18 @@
-package ttt.consoleui;
+package cli_ttt.consoleui;
 
 import ttt.Display;
+import ttt.game.BoardOption;
+import ttt.game.GameOption;
 import ttt.game.Marks;
 
 public class ConsoleDisplay implements Display {
 
-    public void gameOptions() {
+    public void gameOptions(GameOption[] options) {
         write("How would you like to play?");
-        write("1. Human v Human");
-        write("2. Human v Random Computer");
-        write("3. Random Computer v Human");
-        write("4. Human v Perfect Computer");
-        write("5. Perfect Computer v Human");
-        write("6. Perfect Computer v Perfect Computer");
-        write("7. Random Computer v Perfect Computer");
-        write("8. Perfect Computer v Random Computer");
-        write("9. Random Computer v Random Computer");
+        for (GameOption option : options) {
+            write(option.key + ": " + option.title);
+        }
+        write("");
     }
 
     public void write(String message) {
@@ -81,10 +78,11 @@ public class ConsoleDisplay implements Display {
         write("Goodbye!");
     }
 
-    public void boardOptions() {
+    public void boardOptions(BoardOption[] boardOptions) {
         write("What size board would you like?");
-        write("1. 3 x 3");
-        write("2. 4 x 4");
+        for (BoardOption option : boardOptions) {
+            write(option.key + ": " + option.title);
+        }
         write("");
     }
 }

@@ -1,7 +1,9 @@
-package ttt.consoleui;
+package cli_ttt.consoleui;
 
 import ttt.GameException;
 import ttt.Input;
+import ttt.game.BoardOption;
+import ttt.game.GameOption;
 
 import java.util.List;
 import java.util.Scanner;
@@ -22,9 +24,24 @@ public class ConsoleInput implements Input {
         return stream;
     }
 
-    public Integer getMenuChoice(List<Integer> options) {
-        int choice =  validateChoice();
-        if (options.contains(choice)) { return choice; }
+    public Integer getGameChoice(GameOption[] gameOptions) {
+        String input = getInput();
+        for (GameOption option : gameOptions) {
+            if (option.key.equals(input)) {
+                return Integer.valueOf(input);
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Integer getBoardChoice(BoardOption[] boardOptions) {
+        String input = getInput();
+        for (BoardOption option : boardOptions) {
+            if (option.key.equals(input)) {
+                return Integer.valueOf(input);
+            }
+        }
         return null;
     }
 
@@ -46,16 +63,6 @@ public class ConsoleInput implements Input {
         }
     }
 
-    private int validateChoice() {
-        String input = getInput();
-        int choice;
-        if (isAnInteger(input)) {
-            choice = convertToInt(input);
-        } else {
-            choice = 0;
-        }
-        return choice;
-    }
 
     private int convertToInt(String input) {
         int choice;

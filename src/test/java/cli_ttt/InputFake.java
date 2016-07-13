@@ -2,6 +2,8 @@ package cli_ttt;
 
 import ttt.GameException;
 import ttt.Input;
+import ttt.game.BoardOption;
+import ttt.game.GameOption;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,26 @@ public class InputFake implements Input {
 
     public String getReplay() {
         return stream.remove(0);
+    }
+
+    public Integer getGameChoice(GameOption[] gameOptions) {
+        String input = stream.remove(0);
+        for (GameOption option : gameOptions) {
+            if (option.key.equals(input)) {
+                return Integer.valueOf(input);
+            }
+        }
+        return null;
+    }
+
+    public Integer getBoardChoice(BoardOption[] boardOptions) {
+        String input = stream.remove(0);
+        for (BoardOption option : boardOptions) {
+            if (option.key.equals(input)) {
+                return Integer.valueOf(input);
+            }
+        }
+        return null;
     }
 
     public Integer getUserLocation(List<Integer> board, int boardSize) throws GameException {
