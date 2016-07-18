@@ -1,6 +1,8 @@
 package cli_ttt;
 
 import ttt.Display;
+import ttt.game.BoardOption;
+import ttt.game.GameOption;
 import ttt.game.Marks;
 
 public class DisplayFake implements Display {
@@ -8,6 +10,12 @@ public class DisplayFake implements Display {
 
     public String currentMark(Marks mark) {
         return mark.toString();
+    }
+
+    public void gameOptions(GameOption[] options) {
+        for (GameOption option : options) {
+            write(option.key + ": " + option.title);
+        }
     }
 
     public void displayTurn(Marks mark) {
@@ -43,12 +51,6 @@ public class DisplayFake implements Display {
         write("Player Two's mark is " + mark2.toString());
     }
 
-    public void gameOptions() {
-        write("Please choose your opponent:");
-        write("1. Human");
-        write("2. Computer");
-    }
-
     public void clearScreen() {
 
     }
@@ -65,9 +67,10 @@ public class DisplayFake implements Display {
         write("Thanks for playing!");
     }
 
-    public void boardOptions() {
+    public void boardOptions(BoardOption[] options) {
         write("What sized board would you like?");
-        write("1. 3 x 3");
-        write("2. 4 x 4");
+        for (BoardOption option : options) {
+            write(option.key + ": " + option.title);
+        }
     }
 }

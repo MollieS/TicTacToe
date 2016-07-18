@@ -2,6 +2,7 @@ package cli_ttt;
 
 import org.junit.Before;
 import org.junit.Test;
+import ttt.game.BoardOption;
 import ttt.game.Marks;
 
 import static junit.framework.TestCase.assertTrue;
@@ -84,8 +85,8 @@ public class DisplayTest {
 
     @Test
     public void displaysBoardOptions() {
-        display.boardOptions();
-        assertTrue(displayContains("3 x 3"));
+        display.boardOptions(BoardOption.values());
+        assertTrue(displayContains("3x3"));
     }
 
     private boolean displayContains(String output) {
